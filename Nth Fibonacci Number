@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+long long findFibonacci(int n) {
+    // Handle edge cases for n = 1 and n = 2
+    if (n == 1 || n == 2) {
+        return 1;
+    }
+
+    // Initialize variables to store the previous two Fibonacci numbers
+    long long prev1 = 1; // F(1)
+    long long prev2 = 1; // F(2)
+    long long current = 0;
+
+    // Iteratively calculate Fibonacci numbers up to F(n)
+    for (int i = 3; i <= n; i++) {
+        current = prev1 + prev2;
+        prev1 = prev2;
+        prev2 = current;
+    }
+
+    return current;
+}
+
+int main() {
+    int n;
+    cin >> n;
+
+    // Output the result directly
+    cout << findFibonacci(n) << endl;
+
+    return 0;
+}
