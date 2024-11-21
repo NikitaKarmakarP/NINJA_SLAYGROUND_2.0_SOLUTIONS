@@ -1,0 +1,10 @@
+int isSorted(int n, vector<int> a) {
+    // Iterate through the array and check if the current element is greater than the next
+    for (int i = 1; i < n; i++) {
+        if (a[i] < a[i - 1]) {
+            return 0; // Array is not sorted
+        }
+    }
+    return 1; // Array is sorted
+}
+
