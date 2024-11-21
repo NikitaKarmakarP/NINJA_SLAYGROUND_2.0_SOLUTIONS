@@ -1,0 +1,23 @@
+#include <cmath> // For sqrt
+
+bool isPrime(int n) {
+    // Handle edge cases
+    if (n <= 1) {
+        return false; // 1 is not prime
+    }
+    if (n == 2) {
+        return true; // 2 is prime
+    }
+    if (n % 2 == 0) {
+        return false; // Any even number > 2 is not prime
+    }
+
+    // Check divisors up to sqrt(n)
+    for (int i = 3; i <= sqrt(n); i += 2) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
