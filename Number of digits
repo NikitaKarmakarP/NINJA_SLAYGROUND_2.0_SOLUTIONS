@@ -1,0 +1,6 @@
+#include <cmath> // For log10
+
+int countDigits(int n) {
+    // Calculate the number of digits using logarithm
+    return floor(log10(n)) + 1;
+}
