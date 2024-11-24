@@ -1,0 +1,11 @@
+int calcGCD(int n, int m){
+    // Write your code here.
+    // Base case: if one number is zero, return the other
+    while (m != 0) {
+        int temp = m;
+        m = n % m;
+        n = temp;
+    }
+    return n;
+
+}
