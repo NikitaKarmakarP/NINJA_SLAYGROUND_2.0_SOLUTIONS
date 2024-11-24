@@ -1,0 +1,22 @@
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+vector<int> reverseArray(int n, vector<int> &nums) {
+    // Two-pointer approach
+    int left = 0, right = n - 1;
+    while (left < right) {
+        swap(nums[left], nums[right]);
+        left++;
+        right--;
+    }
+    return nums;
+}
+
+// OR using built-in function
+/*
+vector<int> reverseArray(int n, vector<int> &nums) {
+    reverse(nums.begin(), nums.end());
+    return nums;
+}
+*/
