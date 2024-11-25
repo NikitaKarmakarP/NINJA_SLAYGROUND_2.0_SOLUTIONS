@@ -1,0 +1,23 @@
+#include <vector>
+#include <climits>
+using namespace std;
+
+vector<int> getSecondOrderElements(int n, vector<int> a) {
+    // Initialize variables
+    int largest = INT_MIN, second_largest = INT_MIN;
+    int smallest = INT_MAX, second_smallest = INT_MAX;
+
+    // Find the largest and smallest elements
+    for (int num : a) {
+        if (num > largest) largest = num;
+        if (num < smallest) smallest = num;
+    }
+
+    // Find the second largest and second smallest
+    for (int num : a) {
+        if (num > second_largest && num < largest) second_largest = num;
+        if (num < second_smallest && num > smallest) second_smallest = num;
+    }
+
+    return {second_largest, second_smallest};
+}
